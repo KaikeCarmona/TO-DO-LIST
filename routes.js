@@ -1,16 +1,10 @@
-const express = require("express");
-const routes = require("./controller.js");
-const db = require("./db.js");
-const tarefa = require("./tarefa.js");
+const Controller = require("./controller.js");
+const router = require("express").Router()
 
-const app = express();
-app.use(express.json());
-app.use(routes);
+router.get('/task', Controller.findTask);
+router.get('/task/:id', Controller.findTaskone);
+router.post('/task/post', Controller.createTask);
+router.put('/task/update/:id', Controller.updateTask)
+router.delete('/task/delete/:id', Controller.deleteTask)
 
-app.get("/users", tarefa.findAll);
-app.post("/post", function () {
-  tarefa.post;
-});
-
-db.sync(() => console.log(`Banco de dados conectado: `));
-app.listen(3000, () => console.log("Servidor iniciado na porta 3000"));
+module.exports = router;
