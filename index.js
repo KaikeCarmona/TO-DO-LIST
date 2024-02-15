@@ -1,10 +1,9 @@
 const express = require('express');
-const db = require("./db");
-const router = require('./routes');
+const db = require("./model/connection/db");
+const router = require('./view/routes');
 const app = express();
 
 app.use(express.json());
-
 app.use(router)
 
 db.sync(() => console.log(`Banco de dados conectado: `));

@@ -1,4 +1,4 @@
-const Tarefa = require("./tarefa.js");
+const Tarefa = require("../model/tarefa.js");
 
 // classe Controller foi criada pra executar a exportação dos metodos de maneira mais simples.
 class Controller {

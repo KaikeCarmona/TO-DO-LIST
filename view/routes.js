@@ -1,4 +1,4 @@
-const Controller = require("./controller.js");
+const Controller = require("../controller/controller.js");
 const router = require("express").Router()
 
 router.get('/task', Controller.findTask);
